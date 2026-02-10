@@ -30,7 +30,7 @@ export class handleInteractor {
        
     }
 
-    async getMallByName(name : string): Promise<Object[]> {
+    async getMallByName(name : string): Promise<Object> {
         try {
             const malls = await mongoRepository.find({
                 where : {
@@ -48,7 +48,7 @@ export class handleInteractor {
         }
     }
     
-    async setMallName(initialName: string, adjustedName : string): Promise<Object | null> {
+    async setMallName(initialName: string, adjustedName : string): Promise<Object> {
         try {
             console.log("initialNam", initialName, adjustedName)
             const malls = await mongoRepository.findOneAndUpdate(
@@ -73,7 +73,7 @@ export class handleInteractor {
         }
        
     }
-
+    
     async deleteMallByName(name : string): Promise<string> {
         try {
             const response = await mongoRepository.delete({

@@ -88,11 +88,17 @@ app.delete('/mall/:name', async (req : Request, res : Response, next : NextFunct
     }
 })
 
-app.use(async(req : Request, res : Response, next : NextFunction) => {
-    if (redisClient.isOpen) {
-        console.log('Redis is connected');
-    } else {
-        console.log('Redis is NOT connected');
+app.use(async (req : Request, res : Response, next : NextFunction) => {  
+    try {
+         if (redisClient.isOpen) {
+            console.log('Redis is connected');
+        } else {
+            console.log('Redis is NOT connected');
+        }
+    }
+    catch(e : any) {
+        console.log("error", e)
+        return e
     }
     next()
 })
