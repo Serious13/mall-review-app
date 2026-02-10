@@ -1,0 +1,212 @@
+{
+  "malls":
+    [
+      {   
+        "name": "Blooming Flower Mall",
+        "location": {
+          "city": "Bloomington",
+          "state": "Minnesota",
+          "country": "USA",
+          "coordinates": { "lat": 44.854865, "lng": -93.242216 }
+        },
+        "size_sqft": 5600000,
+        "stores_count": 500,
+        "rating": 4.7,
+        "opening_hours": "10:00 - 21:00",
+        "amenities": ["Theme Park", "Aquarium", "Cinema", "Food Court"],
+        "contact": {
+          "phone": "+1-952-883-8800",
+          "website": "https://mallofamerica.com"
+        }
+      },
+      {   
+        "name": "Westfield London",
+        "location": {
+          "city": "London",
+          "country": "United Kingdom",
+          "coordinates": { "lat": 51.507989, "lng": -0.221540 }
+        },
+        "size_sqft": 2400000,
+        "stores_count": 450,
+        "rating": 4.6,
+        "opening_hours": "10:00 - 22:00",
+        "amenities": ["Luxury Shops", "Cinema", "Dining District"],
+        "contact": {
+          "phone": "+44-20-3371-2300",
+          "website": "https://uk.westfield.com/london"
+        }
+      },
+      {   
+        "name": "Dubai Mall",
+        "location": {
+          "city": "Dubai",
+          "country": "UAE",
+          "coordinates": { "lat": 25.197525, "lng": 55.279619 }
+        },
+        "size_sqft": 12000000,
+        "stores_count": 1300,
+        "rating": 4.8,
+        "opening_hours": "10:00 - 00:00",
+        "amenities": ["Ice Rink", "Aquarium", "VR Park", "Fashion Avenue"],
+        "contact": {
+          "phone": "+971-4-362-7500",
+          "website": "https://thedubaimall.com"
+        }
+      },
+      {   
+        "name": "SM Mall of Asia",
+        "location": {
+          "city": "Pasay",
+          "country": "Philippines",
+          "coordinates": { "lat": 14.532191, "lng": 120.981544 }
+        },
+        "size_sqft": 4300000,
+        "stores_count": 600,
+        "rating": 4.5,
+        "opening_hours": "10:00 - 22:00",
+        "amenities": ["Amusement Park", "Concert Arena", "IMAX Theater"],
+        "contact": {
+          "phone": "+63-2-876-1111",
+          "website": "https://smsupermalls.com/mall-directory/sm-mall-of-asia"
+        }
+      },
+      {   
+        "name": "King of Prussia Mall",
+        "location": {
+          "city": "King of Prussia",
+          "state": "Pennsylvania",
+          "country": "USA",
+          "coordinates": { "lat": 40.088307, "lng": -75.392235 }
+        },
+        "size_sqft": 2900000,
+        "stores_count": 400,
+        "rating": 4.6,
+        "opening_hours": "10:00 - 21:00",
+        "amenities": ["Luxury Wing", "Dining Pavilion", "Parking Deck"],
+        "contact": {
+          "phone": "+1-610-265-5727",
+          "website": "https://simon.com/mall/king-of-prussia"
+        }
+      },
+      {    
+        "name": "West Edmonton Mall",
+        "location": {
+          "city": "Edmonton",
+          "country": "Canada",
+          "coordinates": { "lat": 53.522222, "lng": -113.624444 }
+        },
+        "size_sqft": 5300000,
+        "stores_count": 800,
+        "rating": 4.7,
+        "opening_hours": "10:00 - 21:00",
+        "amenities": ["Water Park", "Theme Park", "Ice Palace"],
+        "contact": {
+          "phone": "+1-780-444-5200",
+          "website": "https://wem.ca"
+        }
+      },
+      {   
+        "name": "CentralWorld",
+        "location": {
+          "city": "Bangkok",
+          "country": "Thailand",
+          "coordinates": { "lat": 13.746145, "lng": 100.539467 }
+        },
+        "size_sqft": 4300000,
+        "stores_count": 500,
+        "rating": 4.6,
+        "opening_hours": "10:00 - 22:00",
+        "amenities": ["Skywalk Access", "Cinema", "Dining Zone"],
+        "contact": {
+          "phone": "+66-2-640-7000",
+          "website": "https://centralworld.co.th"
+        }
+      },
+      {
+        "name": "Canal Walk Shopping Centre",
+        "location": {
+          "city": "Cape Town",
+          "country": "South Africa",
+          "coordinates": { "lat": 33.8898, "lng": 18.5060 }
+        },
+        "size_sqft": 1400000,
+        "stores_count": 400,
+        "rating": 4.5,
+        "opening_hours": "09:00 - 21:00",
+        "amenities": ["Canals", "Cinema", "Restaurants"],
+        "contact": {
+          "phone": "+27-21-529-9699",
+          "website": "https://canalwalk.co.za"
+        }
+      },
+      {   
+        "name": "Galleria Vittorio Emanuele II",
+        "location": {
+          "city": "Milan",
+          "country": "Italy",
+          "coordinates": { "lat": 45.465508, "lng": 9.189969 }
+        },
+        "size_sqft": 1000000,
+        "stores_count": 150,
+        "rating": 4.7,
+        "opening_hours": "10:00 - 22:00",
+        "amenities": ["Luxury Boutiques", "Historic Architecture"],
+        "contact": {
+          "phone": "+39-02-7740-4343",
+          "website": "https://milano.it"
+        }
+      },
+      {
+        "name": "La Rinascente Milano",
+        "location": {
+          "city": "Milan",
+          "country": "Italy",
+          "coordinates": { "lat": 45.463581, "lng": 9.191557 }
+        },
+        "size_sqft": 300000,
+        "stores_count": 200,
+        "rating": 4.4,
+        "opening_hours": "10:00 - 21:00",
+        "amenities": ["Rooftop Dining", "Luxury Brands"],
+        "contact": {
+          "phone": "+39-02-88521",
+          "website": "https://rinascente.it"
+        }
+      },
+      {
+        
+        "name": "Grand Indonesia Mall",
+        "location": {
+          "city": "Jakarta",
+          "country": "Indonesia",
+          "coordinates": { "lat": -6.195141, "lng": 106.820056 }
+        },
+        "size_sqft": 3150000,
+        "stores_count": 600,
+        "rating": 4.6,
+        "opening_hours": "10:00 - 22:00",
+        "amenities": ["Sky Bridge", "Dining Terrace", "Cinema"],
+        "contact": {
+          "phone": "+62-21-2358-0000",
+          "website": "https://grand-indonesia.com"
+        }
+      },
+      {   
+        "name": "The Galleria",
+        "location": {
+          "city": "Houston",
+          "state": "Texas",
+          "country": "USA",
+          "coordinates": { "lat": 29.741770, "lng": -95.461270 }
+        },
+        "size_sqft": 2500000,
+        "stores_count": 400,
+        "rating": 4.5,
+        "opening_hours": "10:00 - 21:00",
+        "amenities": ["Ice Rink", "Luxury Wing", "Hotel"],
+        "contact": {
+          "phone": "+1-713-622-0663",
+          "website": "https://simon.com/mall/the-galleria"
+        }
+      }
+]}
