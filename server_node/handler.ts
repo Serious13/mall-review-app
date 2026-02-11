@@ -6,6 +6,7 @@ import { HttpService } from './HttpService'
 import { AxiosInstance } from 'axios'
 import redisClient from './redis'
 import cors from 'cors'
+import { Mall } from './interfaces/interfaces'
 
 dotenv.config({ path: './utils/.env' })
 
@@ -37,11 +38,21 @@ app.post('/createIndexRedis/:name', async (req : Request, res : Response, next :
 
 app.get('/malls', async (req : Request, res : Response, next : NextFunction) => {
     try {
-        const malls : Array<object>= await interactor.getMalls()
+        const malls : Mall[] = await interactor.getMalls()
         console.log("malls Received", malls)
         await redisClient.hSet('malls', 'malls', JSON.stringify(malls))
         console.log("malls" , await redisClient.hGetAll('malls'))
-        res.status(200).send(malls)
+        res.status(200).send(await interactor.getMalls())
+    }
+    catch(e : any) {
+        console.log("error", e, e.response)
+        return e
+    }   
+})
+
+app.get('/users', async (req : Request, res : Response, next : NextFunction) => {
+    try {
+        res.status(200).send(await interactor.getUsers())
     }
     catch(e : any) {
         console.log("error", e, e.response)

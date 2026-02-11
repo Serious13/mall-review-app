@@ -15,7 +15,6 @@ const mongoDataSource : DataSource = new DataSource({
 
 (async () => {
   await mongoDataSource.initialize()
-  console.log("Checking Redis connection")
 })();
 
 console.log("DATASOURCE", mongoDataSource, mongoDataSource.getMongoRepository(Mall))

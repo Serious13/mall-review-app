@@ -5,7 +5,7 @@ const redisClient : RedisClientType = createClient({
 });
 
 redisClient.on("ready", () => {
-   console.error('Connection established')
+   console.error('Redis connection established')
 });
 
 redisClient.on("error", (err : any) => {

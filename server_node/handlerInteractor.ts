@@ -1,10 +1,9 @@
-import axios from 'axios'
 import { AxiosInstance } from 'axios'
 import redisClient from './redis'
 import { RedisClientType } from 'redis';
-import { Mall } from './typeorm/entity/mall.entity'
-import mongoRepository from './typeorm/data-source';
-import { ObjectId } from 'mongodb';
+import mongoRepository from './typeorm/data-source-typeorm';
+import UserModel from './mongoose/data-source-mongoose';
+import { Mall, User } from './interfaces/interfaces';
 
 export class handleInteractor {
     axiosClient : AxiosInstance
@@ -15,9 +14,9 @@ export class handleInteractor {
         this.redisClient = redisClient
     }
 
-    async getMalls(): Promise<Object[]> {
+    async getMalls(): Promise<Mall[]> {
         try {
-            const malls = await mongoRepository.find()
+            const malls : Mall[] = await mongoRepository.find()
             console.log("malls", malls)
             return new Promise((resolve, reject) => {
                 resolve(malls)
@@ -27,19 +26,18 @@ export class handleInteractor {
             console.log("error", e, e.response)
             return e
         }
-       
     }
 
-    async getMallByName(name : string): Promise<Object> {
+    async getMallByName(name : string): Promise<Mall | null> {
         try {
-            const malls = await mongoRepository.find({
+            let mall : Mall | null = await mongoRepository.findOne({
                 where : {
                     "name" : name
                 }
             })
-            console.log("malls", malls)
+            console.log("malls", mall)
             return new Promise((resolve, reject) => {
-                resolve(malls)
+                resolve(mall)
             })
         }
         catch(e: any) {
@@ -88,7 +86,20 @@ export class handleInteractor {
             console.log("error", e, e.response)
             return e
         }
-       
+    }
+
+    async getUsers(): Promise<User[]> {
+        try{
+            const users : User[] = await UserModel.find()
+            console.log("users", users)
+            return new Promise((resolve, reject) => {
+                resolve(users)
+            })
+        }
+        catch(e : any) {
+            console.log("error", e, e.response)
+            return e
+        }
     }
 
     async createIndexRedis(indexName : string): Promise<String> {
