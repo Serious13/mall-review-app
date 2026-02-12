@@ -2,9 +2,11 @@ import { AxiosInstance } from 'axios'
 import redisClient from './redis'
 import { RedisClientType } from 'redis';
 import mongoRepository from './typeorm/data-source-typeorm';
-import UserModel from './mongoose/data-source-mongoose';
+import UserModel from './mongoose/model/userModel';
 import { Mall, User } from './interfaces/interfaces';
 
+
+UserModel
 export class handleInteractor {
     axiosClient : AxiosInstance
     redisClient : RedisClientType
@@ -101,6 +103,37 @@ export class handleInteractor {
             return e
         }
     }
+
+    async getUserByEmail(id : string): Promise<User | null> {
+        try{
+            const user : User | null = await UserModel.findOne({ email: 'a@test.com' });
+            console.log("users", user)
+            return new Promise((resolve, reject) => {
+                resolve(user)
+            })
+        }
+        catch(e : any) {
+            console.log("error", e, e.response)
+            return e
+        }
+    }
+
+    async getUser(): Promise<User[]> {
+        try{
+            const users : User[] = await UserModel.find({
+                
+            })
+            console.log("users", users)
+            return new Promise((resolve, reject) => {
+                resolve(users)
+            })
+        }
+        catch(e : any) {
+            console.log("error", e, e.response)
+            return e
+        }
+    }
+
 
     async createIndexRedis(indexName : string): Promise<String> {
         try {

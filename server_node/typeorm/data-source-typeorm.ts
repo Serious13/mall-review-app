@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm"
 import "reflect-metadata"
-import { Mall } from "./entity/mall.entity"
+import { Mall } from "./entity/mall/mall.entity"
 import dotenv from 'dotenv'
 
 dotenv.config({ path: './utils/.env' })

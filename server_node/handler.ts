@@ -50,27 +50,7 @@ app.get('/malls', async (req : Request, res : Response, next : NextFunction) => 
     }   
 })
 
-app.get('/users', async (req : Request, res : Response, next : NextFunction) => {
-    try {
-        res.status(200).send(await interactor.getUsers())
-    }
-    catch(e : any) {
-        console.log("error", e, e.response)
-        return e
-    }   
-})
 
-app.get('/mall/:name', async (req : Request, res : Response, next : NextFunction) => {
-    try {
-        const name : string = req.params.name
-        console.log("id", name)        
-        res.status(200).send(await interactor.getMallByName(name))
-    }
-    catch(e : any) {
-        console.log("error", e)
-        return e
-    }   
-})
 
 app.patch('/mall', async (req : Request, res : Response, next : NextFunction) => {
     try {
@@ -99,6 +79,27 @@ app.delete('/mall/:name', async (req : Request, res : Response, next : NextFunct
     }
 })
 
+app.get('/users', async (req : Request, res : Response, next : NextFunction) => {
+    try {
+        res.status(200).send(await interactor.getUsers())
+    }
+    catch(e : any) {
+        console.log("error", e, e.response)
+        return e
+    }   
+})
+
+app.get('/user/:accountName', async (req : Request, res : Response, next : NextFunction) => {
+    try {
+        const accountName : string = req.params.accountName
+        res.status(200).send(await interactor.getUserByEmail(accountName))
+    }
+    catch(e : any) {
+        console.log("error", e, e.response)
+        return e
+    }   
+})
+
 app.use(async (req : Request, res : Response, next : NextFunction) => {  
     try {
          if (redisClient.isOpen) {
@@ -111,7 +112,6 @@ app.use(async (req : Request, res : Response, next : NextFunction) => {
         console.log("error", e)
         return e
     }
-    next()
 })
 
 app.listen(process.env.port, () => {
