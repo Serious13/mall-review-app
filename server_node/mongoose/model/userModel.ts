@@ -1,9 +1,10 @@
-import mongoose, {Model, model} from 'mongoose';
-import UserSchema from '../schema/UserSchema';
+import mongoose, {Model, model, Mongoose, Schema, connect} from 'mongoose';
+import UserSchema from '../schema/userSchema';
 import { User  } from '../../interfaces/interfaces';
+import connection  from '../data-source-mongoose';
 
-//const UserModel: Model<User> = mongoose.model<User>('User', UserSchema);
-//const UserModel = mongoose.model('Users', User);
-const UserModel: Model<User> = mongoose.model<User>('User', UserSchema);
+const UserModel = model<User>('User', UserSchema)
 
-export default UserModel; 
+connection().catch((err: any) => console.log(err))
+
+export default UserModel

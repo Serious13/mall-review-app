@@ -15,7 +15,7 @@ interface contact {
 
 export interface User {
     email : string;
-    password : number;
+    password : string;
 }
 
 export interface Mall {
